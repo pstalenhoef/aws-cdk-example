@@ -15,7 +15,7 @@ public class TempTest {
         new ObjectMapper().configure(SerializationFeature.INDENT_OUTPUT, true);
 
     @Test
-    public void testStack() throws IOException {
+    public void testStack() {
         App app = new App();
         ExampleStack stack = new ExampleStack(app, "test");
 
