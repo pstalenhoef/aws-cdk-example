@@ -6,6 +6,7 @@ import software.amazon.awscdk.core.StackProps;
 import software.amazon.awscdk.services.s3.Bucket;
 import software.amazon.awscdk.services.s3.BucketEncryption;
 import software.amazon.awscdk.services.s3.BucketProps;
+import software.amazon.awscdk.services.ec2.Vpc;
 
 public class ExampleStack extends Stack {
     public ExampleStack(final Construct scope, final String id) {
@@ -19,5 +20,7 @@ public class ExampleStack extends Stack {
                 .versioned(true)
                 .encryption(BucketEncryption.KMS_MANAGED)
                 .build());
+
+        Vpc vpc = Vpc.Builder.create(this, "VPC").build();
     }
 }
